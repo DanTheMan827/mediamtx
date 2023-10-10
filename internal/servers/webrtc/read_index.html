@@ -93,6 +93,14 @@ window.addEventListener('DOMContentLoaded', () => {
       video.srcObject = evt.streams[0];
     },
   });
+
+  setInterval(() => {
+    if (video.paused) {
+      console.log("Video paused, resuming.");
+      video.pause();
+      video.play();
+    }
+  }, restartPause);
 });
 
 </script>
